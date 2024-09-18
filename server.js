@@ -6,21 +6,21 @@ import healthRoute from './Route/healthRoute.js'
 import authRoute from "./Route/authRoute.js"
 import { configDotenv } from "dotenv";
 import { databaseConnection } from "./config/connectDb.js";
-import path from "path"; 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 configDotenv()
 databaseConnection()
 app.use(cors())
 app.use(json())
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use("/api/v1/health",healthRoute)
 app.use("/api/v1/auth",authRoute)
 
-//static files
-app.use(express.static(path.join(__dirname,'./client/build')));
 
-app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname,"./client/build/index.html"))
-});
 
 
 const Port = process.env.PORT ||4040 ;
