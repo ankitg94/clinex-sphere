@@ -1,5 +1,5 @@
 import express from "express"
-import { createdata, logindata } from "../Controller/AuthController.js"
+import { createdata, logindata } from "../controller/AuthController.js"
 
 const route =express.Router()
 
