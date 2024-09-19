@@ -6,6 +6,7 @@ import healthRoute from './Route/healthRoute.js'
 import authRoute from "./Route/authRoute.js"
 import { configDotenv } from "dotenv";
 import { databaseConnection } from "./config/connectDb.js";
+//01- hoisting
 import path from 'path'
 import { fileURLToPath } from "url";
 
